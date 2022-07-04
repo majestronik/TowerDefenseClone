@@ -11004,9 +11004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca8777c179f90d4a955742b91ca9cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 105296022707648284, guid: c97134e53facdde45a76adbc2776d273, type: 3}
+  enemyPrefab: {fileID: 5946831831336795688, guid: c97134e53facdde45a76adbc2776d273, type: 3}
   spawnPoint: {fileID: 1759399704}
-  timeBetweenWaves: 25
+  timeBetweenWaves: 10
   waveCountdownText: {fileID: 654311068}
 --- !u!4 &1156035797
 Transform:

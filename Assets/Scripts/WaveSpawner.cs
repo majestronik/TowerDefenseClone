@@ -4,7 +4,7 @@ using TMPro;
 using System;
 
 public class WaveSpawner : MonoBehaviour
-{ 
+{
     public Transform enemyPrefab;
 
     public Transform spawnPoint;
