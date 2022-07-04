@@ -4,14 +4,18 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI roundsText;
+    public SceneFader sceneFader;
+    public string menuSceneName = "MainMenu";
+
     private void OnEnable()
     {
         roundsText.text = PlayerStats.Rounds.ToString();
     }
 
-    public static void Retry()
+    public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         /*
                     .LoadScene(0)
                     .LoadScene("MainScene")  does the same thing
@@ -19,6 +23,6 @@ public class GameOver : MonoBehaviour
     }
     public void Menu()
     {
-        Debug.Log("Go To Menu");
+        sceneFader.FadeTo(menuSceneName);
     }
 }

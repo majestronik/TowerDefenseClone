@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pausedUI;
+    public string menuSceneName = "MainMenu";
 
+    public SceneFader sceneFader;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
@@ -13,7 +14,6 @@ public class PauseMenu : MonoBehaviour
             Toggle();
         }
     }
-    
     public void Toggle()
     {
         pausedUI.SetActive(!pausedUI.activeSelf);
@@ -29,10 +29,11 @@ public class PauseMenu : MonoBehaviour
     public void Retry()
     {
         Toggle();
-        GameOver.Retry();
+        sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
     public void Menu()
     {
-        Debug.Log("Go to menu");
+        Toggle();
+        sceneFader.FadeTo(menuSceneName);
     }
 }
