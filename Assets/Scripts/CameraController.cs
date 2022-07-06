@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public float scrollSpeed = 5f;
     public float minY = 10f;
     public float maxY = 80f;
+    public bool enableMouseCameraControl = false;
 
     // Update is called once per frame
     void Update()
@@ -18,20 +19,19 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-
-        if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
+        if (Input.GetKey("a") || enableMouseCameraControl == true & Input.mousePosition.x <= panBorderThickness)
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
+        if (Input.GetKey("d") || enableMouseCameraControl == true & Input.mousePosition.x >= Screen.width - panBorderThickness)
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        if (Input.GetKey("w") || enableMouseCameraControl == true & Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
+        if (Input.GetKey("s") || enableMouseCameraControl == true & Input.mousePosition.y <= panBorderThickness)
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }

@@ -9669,7 +9669,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 72.87, y: 90, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -9683,11 +9683,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42114d508c58f1c44beeaa09a0d0fc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 30
+  panSpeed: 20
   panBorderThickness: 10
   scrollSpeed: 5
   minY: 10
   maxY: 80
+  enableMouseCameraControl: 0
 --- !u!1001 &996258035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11004,7 +11005,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca8777c179f90d4a955742b91ca9cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5946831831336795688, guid: c97134e53facdde45a76adbc2776d273, type: 3}
+  waves:
+  - enemy: {fileID: 5946831831336795668, guid: c97134e53facdde45a76adbc2776d273, type: 3}
+    count: 1
+    rate: 2
+  - enemy: {fileID: 5946831831336795668, guid: c97134e53facdde45a76adbc2776d273, type: 3}
+    count: 2
+    rate: 2
+  - enemy: {fileID: 5946831831336795668, guid: c97134e53facdde45a76adbc2776d273, type: 3}
+    count: 5
+    rate: 2
+  - enemy: {fileID: 5946831831336795668, guid: c5580c7fd1be7a6429dccbcc2254a2b7, type: 3}
+    count: 3
+    rate: 1
+  - enemy: {fileID: 5946831831336795668, guid: 6c91417da0b444e40a6b761d4d54befe, type: 3}
+    count: 10
+    rate: 3
   spawnPoint: {fileID: 1759399704}
   timeBetweenWaves: 10
   waveCountdownText: {fileID: 654311068}
@@ -21096,11 +21112,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381757515313961159, guid: 564da938142c9a142b9329f731babe98, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381757515313961160, guid: 564da938142c9a142b9329f731babe98, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1381757515313961161, guid: 564da938142c9a142b9329f731babe98, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1381757515313961161, guid: 564da938142c9a142b9329f731babe98, type: 3}
       propertyPath: m_LocalPosition.x
