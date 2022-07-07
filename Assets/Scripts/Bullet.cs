@@ -41,10 +41,9 @@ public class Bullet : MonoBehaviour
         {
             Explode();
         }
-        else
-        {
+       
             Damage(target);
-        }
+        
         Destroy(gameObject);
         return;
     }
@@ -54,6 +53,7 @@ public class Bullet : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {
+            print(collider.name);
             if (collider.tag == "Enemy")
             {
                 Damage(collider.transform);
