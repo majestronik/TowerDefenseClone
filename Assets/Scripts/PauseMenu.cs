@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Toggle()
     {
+        print("Toggle");
         pausedUI.SetActive(!pausedUI.activeSelf);
         if (pausedUI.activeSelf)
         {

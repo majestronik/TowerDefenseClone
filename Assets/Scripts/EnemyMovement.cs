@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using DG.Tweening;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
@@ -22,8 +22,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
+        // Vector3 dir = target.position - transform.position;
+        // transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, enemy.speed * Time.deltaTime);
+        transform.LookAt(target.position);
+
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {

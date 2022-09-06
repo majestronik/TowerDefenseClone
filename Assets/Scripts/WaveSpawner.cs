@@ -53,8 +53,6 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(1f / wave.rate);
         }
         waveIndex++;
-
-
     }
 
     private void SpawnEnemy(GameObject enemy)
